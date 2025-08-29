@@ -20,3 +20,19 @@
 - HTTPs
 - Tree Shaking - removes unused code
 - Different Dev and Production builds 
+
+
+/**
+ * Header
+ * - Logo
+ * - Nav Items
+ * Body
+ * - Search bar
+ * - RestrauntCard container
+ *   - Restraunt Cards
+ *      - Name, star rating, cuisines, delivery time
+ * Footer
+ * - Copyright
+ * - Links
+ * - Contact Info
+ */

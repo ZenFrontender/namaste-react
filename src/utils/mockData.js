@@ -1,60 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client"
-
-/**
- * Header
- * - Logo
- * - Nav Items
- * Body
- * - Search bar
- * - RestrauntCard container
- *   - Restraunt Cards
- *      - Name, star rating, cuisines, delivery time
- * Footer
- * - Copyright
- * - Links
- * - Contact Info
- */
-
-const Header = () =>{
-    return(
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src="https://marketplace.canva.com/EAFaFUz4aKo/3/0/1600w/canva-yellow-abstract-cooking-fire-free-logo-tn1zF-_cG9c.jpg" />
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-
-const RestaurantCard  = (props) =>{
-    const {resData} = props;
-
-    const {cloudinaryImageId, name, cuisines, avgRating, costForTwo, deliveryTime} = resData?.info
-
-
-    return(
-        <div className="res-card">
-
-            <img src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`} className="res-pic" />
-            <h3>{name}</h3>
-            <h4>{cuisines.join(", ")}</h4>
-            <h4>{avgRating}</h4>
-            <h4>{costForTwo}</h4>
-            <h4>{deliveryTime}</h4>
-        </div>
-    )
-}
-
 const resObj= [
 {
 info: {
@@ -1679,47 +1622,7 @@ link: "https://www.swiggy.com/city/sitapur/classic-sweets-raja-bazar-ghantaghar-
 type: "WEBLINK"
 }
 }
-]
+];
 
 
-const Body = () =>{
-    return(
-        <div className="body">
-            <div className="search">
-                Search
-            </div>
-            <div className="res-container">
-
-                {
-                    resObj.map((res)=><RestaurantCard key={res.info.id} resData={res} />)
-                }
-
-                
-                {/* <RestaurantCard resData={resObj[1]}  />
-                <RestaurantCard resData={resObj[2]} />
-                <RestaurantCard resData={resObj[3]}  />
-                <RestaurantCard resData={resObj[4]} />
-                <RestaurantCard resData={resObj[5]}  />
-                <RestaurantCard resData={resObj[6]} />
-                <RestaurantCard resData={resObj[7]}  />
-                <RestaurantCard resData={resObj[8]} />
-                <RestaurantCard resData={resObj[9]}  />
-                <RestaurantCard resData={resObj[10]}  /> */}
-            </div>
-        </div>
-    )
-}
-
-const AppLayout = () =>{
-    return(
-        <div className="app">
-            <Header />
-            <Body />
-            // Footer
-        </div>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />)
+export default resObj;
