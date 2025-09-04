@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
+import { NavLink } from "react-router-dom";
 
 const Header = () =>{
 
@@ -12,9 +13,9 @@ const Header = () =>{
             </div>
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
+                    <NavLink to='/'>Home</NavLink>
+                    <NavLink to='/about'>About</NavLink>
+                    <NavLink to='/contact'>Contact</NavLink> 
                     <li>Cart</li>
                     <button onClick={()=>
                         

@@ -1,7 +1,8 @@
 {
   "name": "namaste-react",
   "version": "1.0.0",
-  "description": "This is Namaste Reavy",  "scripts": {
+  "description": "This is Namaste Reavy",
+  "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "jest"
@@ -25,9 +26,10 @@
   },
   "dependencies": {
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^6.23.1"
   },
-  "browserslist":[
+  "browserslist": [
     "Last 2 versions"
   ]
 }
