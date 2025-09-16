@@ -3,6 +3,8 @@ import resObj from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import Offline from "./Offline";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -32,6 +34,8 @@ const Body = () => {
     setFilteredListOfRestaurants(restaurants);
     
   };
+
+  
 
   return listOfRestaurants?.length == 0 ? (
     <Shimmer />

@@ -7,13 +7,22 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Offline from "./components/Offline";
+import useOnlineStatus from "./utils/useOnlineStatus"
 
 const AppLayout = () =>{
+    const onlineStatus = useOnlineStatus();
+
+  
     return(
-        <div className="app">
+        <div>
+        <div className={onlineStatus?"app":"hidden"}>
             <Header />
-            <Outlet />
-            
+            <Outlet />    
+        </div>
+        <div className={onlineStatus?"hidden":"flex"}> 
+            <Offline />
+        </div>
         </div>
     )
 }

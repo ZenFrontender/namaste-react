@@ -79,3 +79,26 @@
 .restaurant-links{
     text-decoration: none;
 }
+
+.offline-img {
+    width: 70%;
+    height: auto;
+    
+}
+
+.hidden{
+    display: none;
+}
+
+.display{
+    display: flex;
+}
+
+.offline-comp{
+    display: flex;
+  flex-direction: column;
+  align-items: center;      /* centers children horizontally */
+  justify-content: center;  /* centers children vertically */
+  min-height: 100vh;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
+}
