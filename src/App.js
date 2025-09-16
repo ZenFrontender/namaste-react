@@ -13,17 +13,14 @@ import useOnlineStatus from "./utils/useOnlineStatus"
 const AppLayout = () =>{
     const onlineStatus = useOnlineStatus();
 
-  
+    if((onlineStatus)==false){
+        return <Offline />
+    }
     return(
-        <div>
-        <div className={onlineStatus?"app":"hidden"}>
-            <Header />
+        <div className="app">
+            <Header isOnline={onlineStatus} />
             <Outlet />    
-        </div>
-        <div className={onlineStatus?"hidden":"flex"}> 
-            <Offline />
-        </div>
-        </div>
+       </div>
     )
 }
 

@@ -31,6 +31,11 @@
     text-decoration: none;
 }
 
+.navLinks{
+    text-decoration: none;
+    color: black;
+}
+
 .res-card{
     width: 200px;
     height: 450px;
