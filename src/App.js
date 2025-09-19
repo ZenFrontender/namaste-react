@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy } from "react";
 import ReactDOM from "react-dom/client"
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -10,6 +10,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Offline from "./components/Offline";
 import useOnlineStatus from "./utils/useOnlineStatus"
 
+
 const AppLayout = () =>{
     const onlineStatus = useOnlineStatus();
 
@@ -20,9 +21,12 @@ const AppLayout = () =>{
         <div className="app">
             <Header isOnline={onlineStatus} />
             <Outlet />    
+           
        </div>
     )
 }
+
+const Grocery = lazy(()=>import('./components/Grocery'))
 
 const  appRouter = createBrowserRouter([
     {
@@ -44,6 +48,10 @@ const  appRouter = createBrowserRouter([
             {
             path: "/restaurant/:restaurantID",
             element: <RestaurantMenu />
+            },
+            {
+                path: '/grocery',
+                element: <Grocery />
             }
         ],
     errorElement: <Error />
