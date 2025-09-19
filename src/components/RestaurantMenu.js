@@ -1,8 +1,10 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+// import CheckLazy from "./CheckLazy";
+import { lazy, Suspense } from "react";
 
-
+const CheckLazy = lazy(()=>import('./CheckLazy'));
 
 const RestaurantMenu = () =>{
 
@@ -33,7 +35,10 @@ return(
             
            {itemCards.map((item)=>(<li key={item.card.info.id}>{item.card.info.name} - Rs.{item.card.info.defaultPrice/10||item.card.info.price/10}</li>))} 
             
-        </ul> 
+        </ul>
+        <Suspense fallback={<h1>dsafsdf</h1>}>
+        <CheckLazy />
+        </Suspense> 
     </div>
 )
 
