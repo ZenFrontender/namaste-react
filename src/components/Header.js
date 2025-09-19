@@ -18,6 +18,7 @@ const Header = ({isOnline}) =>{
                 <ul>
                     <li>Kshitij 🟢</li>
                     <li><NavLink to='/' className="navLinks">Home</NavLink></li>
+                     <li><NavLink to='/grocery' className="navLinks">Grocery</NavLink></li>
                      <li><NavLink to='/about' className="navLinks">About</NavLink></li>
                      <li><NavLink to='/contact' className="navLinks">Contact</NavLink> </li>
                     <li>Cart</li>
